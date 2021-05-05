@@ -1,16 +1,18 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	display: block;
 	box-sizing: border-box;
 	font-family: sans-serif;
 }
 
-/* navbar */
+/* parent 1 */
 #navbar {
 	position: fixed;
 	min-width: 290px;
-	top: 0;
 	left: 0;
-	width: 300px;
 	height: 100%;
 	border-right: solid;
 	border-color: #4d4e53;
@@ -18,44 +20,39 @@ body {
 
 header {
 	font-size: 1.8em;
-	padding: 15px;
 	color: #4d4e53;
 }
 
 #navbar header {
 	text-align: center;
-	padding: 10px;
 }
 
+/* parent 2 */
 #navbar ul {
+	display: flex;
+	flex-direction: column;
 	height: 88%;
 	padding: 0;
-	overflow-y: auto;
-	overflow-x: hidden;
+	overflow: auto;
 }
 
 #navbar ul li {
-	position: relative;
 	list-style: none;
 	border-top: 1px solid;
-	width: 100%;
-	padding: 5px;
+	padding: 20px 0 20px 25px;
 }
 
 #navbar ul li a {
 	display: block;
-	padding: 10px 30px;
 	text-decoration: none;
 	cursor: pointer;
 	color: #4d4e53;
 }
 
-/* main-doc */
+/* parent 1 */
 #main-doc {
-	position: absolute;
 	margin-left: 310px;
 	padding: 10px;
-	margin-bottom: 110px;
 }
 
 #main-doc header {
@@ -75,25 +72,28 @@ header {
 	display: block;
 	text-align: left;
 	white-space: pre-line;
-	position: relative;
 	line-height: 2;
 	font-family: 'Courier new';
 	padding: 15px;
-	margin: 10px;
+	margin: 10px auto;
 	background-color: #eaeaea;
+	overflow: auto;
 }
 
 @media (max-width: 768px) {
 	#navbar {
+		display: flex;
+		flex-direction: column;
 		background-color: #fff;
 		position: absolute;
 		top: 0;
-		padding: 0;
-		margin: 0;
 		width: 100%;
-		max-height: 270px;
+		max-height: 340px;
 		border: none;
-		z-index: 1;
+	}
+
+	#navbar header {
+		padding-top: 15px;
 	}
 
 	#navbar ul {
@@ -102,7 +102,6 @@ header {
 
 	#main-doc {
 		position: relative;
-		margin-left: 0;
-		margin-top: 285px;
+		margin: 350px auto;
 	}
 }
